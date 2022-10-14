@@ -1,34 +1,36 @@
-<ion-header>
-  <ion-toolbar>
-    <ion-title>login</ion-title>
-  </ion-toolbar>
-</ion-header>
+<ion-content [fullscreen]="true">
+  <div class="container">
+    <div class="letras">
 
-<ion-content class="ion-padding">
-  <form [formGroup]="credentials" (ngSubmit)="login()">
+      <form [formGroup]="credentials" (ngSubmit)="login()">
 
-    <ion-item fill="solid" class="ion-margin-bottom">
+        <label for="exampleDataList" class="form-label">Usuario</label>
+        <input class="form-control" type="email" placeholder="Email" formControlName="email">
+        <ion-note slot="error" *ngIf="(email.dirty || email.touched) && email.errors" color="danger">Formato
+          de email no válido.
+        </ion-note>
 
-      <ion-input type="email" placeholder="Email" formControlName="email"></ion-input>
-      <ion-note slot="error" *ngIf="(email.dirty || email.touched) && email.errors">Formato de email no válido.
-      </ion-note>
+        <label for="exampleDataList" class="form-label mt-3">Contraseña</label>
+        <input class="form-control" type="password" placeholder="Password" formControlName="password">
+        <ion-note slot="error" *ngIf="(password.dirty || password.touched) && password.errors" color="danger">Formato de
+          contraseña no
+          válido. Mínimo 8 caracteres.
+        </ion-note>
+        <br>
+
+        <ion-button expand="block" type="submit" [disabled]="!credentials.valid">
+          <ion-icon name="log-in-outline"></ion-icon>&nbsp; Iniciar sesión
+        </ion-button>
+
+      </form>
 
 
-    </ion-item>
 
-    <ion-item fill="solid" class="ion-margin-bottom">
+    </div>
+    <div class="registro">
 
-      <ion-input type="password" placeholder="Password" formControlName="password"></ion-input>
-      <ion-note slot="error" *ngIf="(password.dirty || password.touched) && password.errors">Formato de contraseña no
-        válido. Mínimo 8 caracteres.
-      </ion-note>
-
-
-    </ion-item>
-
-    <ion-button expand="full" type="submit" [disabled]="!credentials.valid">Login</ion-button>
-    <ion-button expand="full" type="button" (click)="register()">Crear cuenta</ion-button>
-
-  </form>
-
+      ¿No tienes una cuenta?<br>
+      <a href="#" [routerLink]="['/registro/']">Registrate aquí</a>
+    </div>
+  </div>
 </ion-content>

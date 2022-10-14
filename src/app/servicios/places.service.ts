@@ -1,11 +1,14 @@
 import { Injectable } from '@angular/core';
 import { PlacesApiClient } from '../api/places.service';
 import { Places, Feature } from '../modelo/lugares';
+import { MapboxService } from './mapbox.service';
 
 @Injectable({
   providedIn: 'root'
 })
 export class PlacesService {
+
+
 
   public userLocation?: [number, number];
 
@@ -17,7 +20,8 @@ export class PlacesService {
   }
 
   constructor(
-    private placesApi: PlacesApiClient
+    private placesApi: PlacesApiClient,
+    private mapService: MapboxService
   ) {
     this.getUserLocation();
   }
@@ -60,9 +64,9 @@ export class PlacesService {
       })
       .subscribe(
         resp => {
-          //this.isLoadingPlaces = false;
+          this.isLoadingPlaces = false;
           this.places = resp.features;
-          console.log(resp.features)
+          this.mapService.createMarkersFromPlaces(this.places);
         }
       )
   }
