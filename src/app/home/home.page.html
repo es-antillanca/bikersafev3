@@ -1,0 +1,16 @@
+<ion-content>
+    <app-cargando-mapa *ngIf="!isUserLocationReady; else mapaCargado"></app-cargando-mapa>
+
+    <ng-template #mapaCargado>
+        <div class="contenedor">
+            <app-mapa-vista></app-mapa-vista>
+            <app-mi-ubicacion></app-mi-ubicacion>
+            <app-buscador></app-buscador>
+            <app-cerrar-sesion></app-cerrar-sesion>
+        </div>
+
+    </ng-template>
+
+
+
+</ion-content>

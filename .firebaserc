@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "bikersafe-auth": {
+      "hosting": {
+        "app": [
+          "biker-app"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "bikersafe-auth"
+  }
+}

@@ -1,0 +1,5 @@
+<div class="contenedor-busqueda">
+  <input type="text" class="form-control shadow" placeholder="Ingrese destino" #txtQuery
+    (keyup)="onQueryChanged(txtQuery.value)">
+  <app-resultado-busqueda></app-resultado-busqueda>
+</div>
