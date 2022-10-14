@@ -16,6 +16,7 @@ import { MiUbicacionComponent } from '../componentes/mi-ubicacion/mi-ubicacion.c
 import { ResultadoBusquedaComponent } from '../componentes/resultado-busqueda/resultado-busqueda.component';
 import { BuscadorComponent } from '../componentes/buscador/buscador.component';
 import { CerrarSesionComponent } from '../componentes/cerrar-sesion/cerrar-sesion.component';
+import { ResultadoDireccionComponent } from '../componentes/resultado-direccion/resultado-direccion.component';
 
 
 @NgModule({
@@ -26,7 +27,7 @@ import { CerrarSesionComponent } from '../componentes/cerrar-sesion/cerrar-sesio
     HomePageRoutingModule,
     HttpClientModule,
   ],
-  declarations: [HomePage, MapaVistaComponent, CargandoMapaComponent, MiUbicacionComponent, ResultadoBusquedaComponent, BuscadorComponent, CerrarSesionComponent],
+  declarations: [HomePage, MapaVistaComponent, CargandoMapaComponent, MiUbicacionComponent, ResultadoBusquedaComponent, BuscadorComponent, CerrarSesionComponent, ResultadoDireccionComponent],
   providers: [MapboxService, PlacesService],
 })
 export class HomePageModule { }

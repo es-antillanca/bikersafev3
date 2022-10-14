@@ -3,6 +3,7 @@ import { Router } from '@angular/router';
 import { AuthService } from '../servicios/auth.service';
 import { PlacesService } from 'src/app/servicios/places.service';
 import { MapboxService } from '../servicios/mapbox.service';
+import { throws } from 'assert';
 
 @Component({
   selector: 'app-home',
@@ -10,6 +11,8 @@ import { MapboxService } from '../servicios/mapbox.service';
   styleUrls: ['home.page.scss'],
 })
 export class HomePage {
+
+
 
   constructor(
     private authService: AuthService,

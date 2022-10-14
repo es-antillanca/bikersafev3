@@ -11,8 +11,10 @@ export class BuscadorComponent {
   private debounceTimer?: NodeJS.Timeout;
 
 
+
   constructor(private PlaceService: PlacesService) {
   }
+
 
   onQueryChanged(query: string = '') {
 
