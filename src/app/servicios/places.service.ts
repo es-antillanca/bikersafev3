@@ -39,7 +39,6 @@ export class PlacesService {
           alert('Geolocalización no conseguida')
           console.log(err);
         }
-
       );
     });
   }

@@ -1,5 +1,6 @@
 import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { Feature } from 'src/app/modelo/lugares';
+import { Route } from 'src/app/modelo/direcciones';
 import { MapboxService } from 'src/app/servicios/mapbox.service';
 import { PlacesService } from 'src/app/servicios/places.service';
 
@@ -24,6 +25,10 @@ export class ResultadoBusquedaComponent {
     return this.placesService.places;
   }
 
+  get distance(): number {
+    return this.mapService.distance;
+  }
+
   flyTo(place: Feature) {
     const [lng, lat] = place.center;
     this.mapService.flyTo([lng, lat]);
@@ -35,7 +40,6 @@ export class ResultadoBusquedaComponent {
     const start = this.placesService.userLocation;
     const end = place.center as [number, number];
     this.mapService.getRouteBetweenPoints(start, end);
-
   }
 
 }

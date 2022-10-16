@@ -11,7 +11,9 @@ export class MapboxService {
 
   private map?: Map;
   private markers: Marker[] = [];
-  public rutas: Route;
+  public distance: number;
+
+  public time: number;
 
   get isMapReady() {
     return !!this.map;
@@ -27,8 +29,9 @@ export class MapboxService {
   private drawRute(route: Route) {
 
     console.log({ distancia: route.distance / 1000, duration: route.duration / 60 });
-    this.rutas = route;
-    console.log(this.rutas);
+    this.distance = route.distance / 1000;
+    this.time = route.duration / 60;
+    //console.log(this.distance);
 
 
     if (!this.map) throw Error('Mapa no inicializado');

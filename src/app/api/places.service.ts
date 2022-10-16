@@ -19,6 +19,7 @@ export class PlacesApiClient extends HttpClient {
       [param: string]: string | number | boolean | ReadonlyArray<string | number | boolean>;
     };
   }) {
+
     url = this.baseUrl + url;
 
     return super.get<T>(url, {

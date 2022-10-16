@@ -17,6 +17,7 @@ import { ResultadoBusquedaComponent } from '../componentes/resultado-busqueda/re
 import { BuscadorComponent } from '../componentes/buscador/buscador.component';
 import { CerrarSesionComponent } from '../componentes/cerrar-sesion/cerrar-sesion.component';
 import { ResultadoDireccionComponent } from '../componentes/resultado-direccion/resultado-direccion.component';
+import { OpcionesDestinoComponent } from '../componentes/opciones-destino/opciones-destino.component';
 
 
 @NgModule({
@@ -27,7 +28,7 @@ import { ResultadoDireccionComponent } from '../componentes/resultado-direccion/
     HomePageRoutingModule,
     HttpClientModule,
   ],
-  declarations: [HomePage, MapaVistaComponent, CargandoMapaComponent, MiUbicacionComponent, ResultadoBusquedaComponent, BuscadorComponent, CerrarSesionComponent, ResultadoDireccionComponent],
+  declarations: [HomePage, MapaVistaComponent, CargandoMapaComponent, MiUbicacionComponent, ResultadoBusquedaComponent, BuscadorComponent, CerrarSesionComponent, ResultadoDireccionComponent, OpcionesDestinoComponent],
   providers: [MapboxService, PlacesService],
 })
 export class HomePageModule { }

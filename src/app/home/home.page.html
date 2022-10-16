@@ -8,6 +8,12 @@
             <app-buscador></app-buscador>
             <app-cerrar-sesion></app-cerrar-sesion>
             <app-resultado-direccion></app-resultado-direccion>
+            <p *ngIf="distance;then distancia else nada"></p>
+            <ng-template #nada></ng-template>
+            <ng-template #distancia>
+                <app-opciones-destino [distance]="distance" [time]="time"></app-opciones-destino>
+            </ng-template>
+
         </div>
 
     </ng-template>

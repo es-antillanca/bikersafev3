@@ -10,11 +10,7 @@ export class BuscadorComponent {
 
   private debounceTimer?: NodeJS.Timeout;
 
-
-
-  constructor(private PlaceService: PlacesService) {
-  }
-
+  constructor(private PlaceService: PlacesService) { }
 
   onQueryChanged(query: string = '') {
 
@@ -24,7 +20,7 @@ export class BuscadorComponent {
       this.PlaceService.getPlacesByQuery(query)
     }, 350);
 
-    console.log(query)
+
 
   }
 }
