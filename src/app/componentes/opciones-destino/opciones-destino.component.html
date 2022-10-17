@@ -1,22 +1,39 @@
 <div class="contenedor-opciones shadow">
   <div class="card">
+    <div class="card-header">
+      <ion-segment value="segment1" (ionChange)="segmentChanged($event)">
+        <ion-segment-button value="segment1">
+          <ion-label>Opciones</ion-label>
+        </ion-segment-button>
+        <ion-segment-button value="segment2">
+          <ion-label>Indicaciones</ion-label>
+        </ion-segment-button>
+      </ion-segment>
+    </div>
     <div class="card-body">
-      <div class="row">
-        <div class="col">
-          <p class="text-muted">{{distance | number:'1.1-2'}} km</p>
-        </div>
-        <div class="col">
-          <p class="text-muted">{{time | number:'1.0-0'}} min</p>
-        </div>
-        <div class="col">
-          <div class="d-grid gap-2">
-            <button class="btn btn-primary btn-sm" type="button"><i class="bi bi-cursor-fill"></i>&nbsp;</button>
+      <div *ngIf="segment1">
+        <div class="row">
+          <div class="col">
+            <p class="text-muted">{{distance | number:'1.1-2'}} km</p>
+          </div>
+          <div class="col">
+            <p class="text-muted">{{time | number:'1.0-0'}} min</p>
+          </div>
+          <div class="col">
+            <div class="d-grid gap-2">
+              <button class="btn btn-primary btn-sm" type="button"><i class="bi bi-cursor-fill"></i>&nbsp;</button>
+            </div>
           </div>
         </div>
+        <div class="row">
+          <button type="button" class="btn btn-primary btn-sm">Guardar ruta</button>
+        </div>
+
       </div>
-      <div class="row">
-        <button type="button" class="btn btn-primary btn-sm">Guardar ruta</button>
+      <div *ngIf="segment2">
+        Indicaciones
       </div>
     </div>
+
   </div>
 </div>
