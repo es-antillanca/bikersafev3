@@ -19,8 +19,5 @@ export class BuscadorComponent {
     this.debounceTimer = setTimeout(() => {
       this.PlaceService.getPlacesByQuery(query)
     }, 350);
-
-
-
   }
 }

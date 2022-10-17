@@ -15,9 +15,6 @@ export class MapboxService {
 
   public time: number;
 
-  get isMapReady() {
-    return !!this.map;
-  }
 
   constructor(private direcciones: direccionesApi) {
   }
@@ -86,6 +83,11 @@ export class MapboxService {
 
     });
 
+  }
+
+
+  get isMapReady() {
+    return !!this.map;
   }
 
   setMap(map: Map) {

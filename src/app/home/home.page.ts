@@ -19,14 +19,6 @@ export class HomePage {
 
   ) { }
 
-  get distance() {
-    return this.mapService.distance;
-  }
-
-  get time() {
-    return this.mapService.time;
-  }
-
   get isUserLocationReady() {
     return this.placesService.isUserLocationReady;
   }
@@ -34,5 +26,13 @@ export class HomePage {
   async logout() {
     await this.authService.logout();
     this.router.navigateByUrl('/', { replaceUrl: true });
+  }
+
+  get distance() {
+    return this.mapService.distance;
+  }
+
+  get time() {
+    return this.mapService.time;
   }
 }
